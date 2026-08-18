@@ -1,0 +1,51 @@
+class Player:
+    def __init__(self, name, jersey_number, runs):
+        self.name = name
+        self.jersey_number = jersey_number
+        self.runs = runs
+
+    def get_category(self):
+        if self.runs >= 5000:
+            return "Excellent"
+        elif self.runs >= 2000:
+            return "Good"
+        return "Average"
+
+    def __str__(self):
+        return f"[{self.jersey_number}] {self.name} - {self.runs} Runs ({self.get_category()})"
+
+
+class Team:
+    def __init__(self, team_name):
+        self.team_name = team_name
+        self.roster = []
+
+    def add_player(self, player):
+        self.roster.append(player)
+
+    def display_all(self):
+        print(f"--- {self.team_name} Roster ---")
+        if not self.roster:
+            print("No players in the team yet.")
+            return
+            
+        for player in self.roster:
+            print(player)
+
+
+my_team = Team("India National Team")
+
+my_team.add_player(Player("Virat Kohli", 18, 12000))
+my_team.add_player(Player("MS Dhoni", 7, 10000))
+my_team.add_player(Player("Rishabh Pant", 17, 2500))
+my_team.add_player(Player("Yashasvi Jaiswal", 64, 1500))
+
+my_team.display_all()
+
+
+# Output:
+# --- India National Team Roster ---
+# [18] Virat Kohli - 12000 Runs (Excellent)
+# [7] MS Dhoni - 10000 Runs (Excellent)
+# [17] Rishabh Pant - 2500 Runs (Good)
+# [64] Yashasvi Jaiswal - 1500 Runs (Average)
