@@ -1,0 +1,48 @@
+class Product:
+    def __init__(self, product_id, name, price):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
+
+    def get_category(self):
+        if self.price >= 100:
+            return "Expensive"
+        return "Affordable"
+
+    def __str__(self):
+        return f"[{self.product_id}] {self.name} - ${self.price:.2f} ({self.get_category()})"
+
+
+class Inventory:
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def display_all(self):
+        print("--- Current Inventory ---")
+        if not self.products:
+            print("No products in inventory.")
+            return
+            
+        for product in self.products:
+            print(product)
+
+
+store_inventory = Inventory()
+
+store_inventory.add_product(Product("P001", " Mouse", 25))
+store_inventory.add_product(Product("P002", " Keyboard", 120))
+store_inventory.add_product(Product("P003", " Monitor", 200))
+store_inventory.add_product(Product("P004", "USB-C Cable", 12))
+
+store_inventory.display_all()
+
+
+# Output:
+# --- Current Inventory ---
+# [P001] Wireless Mouse - $25 (Affordable)
+# [P002] Mechanical Keyboard - $120 (Expensive)
+# [P003] HD Monitor - $200 (Expensive)
+# [P004] USB-C Cable - $12 (Affordable)
