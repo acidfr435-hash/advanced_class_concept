@@ -20,6 +20,6 @@ my_dog = Dog("Buddy", "Golden Retriever")
 print(f"My dog's name is {my_dog.name}.")
 print(my_dog.speak())
 
-# Output:
-# My dog's name is Buddy.
-# Buddy the Golden Retriever says Woof!
+ Output:
+ My dog's name is Buddy.
+ Buddy the Golden Retriever says Woof!
