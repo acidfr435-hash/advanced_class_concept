@@ -20,5 +20,5 @@ string2 = "ace"
 result = longest_common_subsequence(string1, string2)
 print(f"Longest Common Subsequence length: {result}")
 
-# Output:
-# Longest Common Subsequence length: 3
+ Output:
+ Longest Common Subsequence length: 3
