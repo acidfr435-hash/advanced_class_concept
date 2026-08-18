@@ -43,9 +43,9 @@ my_team.add_player(Player("Yashasvi Jaiswal", 64, 1500))
 my_team.display_all()
 
 
-# Output:
-# --- India National Team Roster ---
-# [18] Virat Kohli - 12000 Runs (Excellent)
-# [7] MS Dhoni - 10000 Runs (Excellent)
-# [17] Rishabh Pant - 2500 Runs (Good)
-# [64] Yashasvi Jaiswal - 1500 Runs (Average)
+ Output:
+ --- India National Team Roster ---
+ [18] Virat Kohli - 12000 Runs (Excellent)
+ [7] MS Dhoni - 10000 Runs (Excellent)
+ [17] Rishabh Pant - 2500 Runs (Good)
+ [64] Yashasvi Jaiswal - 1500 Runs (Average)
