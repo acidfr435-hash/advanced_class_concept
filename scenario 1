@@ -40,9 +40,9 @@ store_inventory.add_product(Product("P004", "USB-C Cable", 12))
 store_inventory.display_all()
 
 
-# Output:
-# --- Current Inventory ---
-# [P001] Wireless Mouse - $25 (Affordable)
-# [P002] Mechanical Keyboard - $120 (Expensive)
-# [P003] HD Monitor - $200 (Expensive)
-# [P004] USB-C Cable - $12 (Affordable)
+ Output:
+ --- Current Inventory ---
+ [P001] Wireless Mouse - $25 (Affordable)
+ [P002] Mechanical Keyboard - $120 (Expensive)
+ [P003] HD Monitor - $200 (Expensive)
+ [P004] USB-C Cable - $12 (Affordable)
