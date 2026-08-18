@@ -1,0 +1,48 @@
+class CardTransaction:
+    def process(self, bill_amount):
+        print(f"Successfully transferred ₹{bill_amount} via Credit/Debit Card")
+
+class PaypalTransaction:
+    def process(self, bill_amount):
+        print(f"Successfully transferred ₹{bill_amount} via PayPal")
+
+class UpiTransaction:
+    def process(self, bill_amount):
+        print(f"Successfully transferred ₹{bill_amount} via UPI network")
+
+class CheckoutManager:
+    def __init__(self, payment_method):
+        self.payment_method = payment_method
+
+    def execute_payment(self, bill_amount):
+        self.payment_method.process(bill_amount)
+
+print("Choose a Payment Option:")
+print("1) Credit/Debit Card")
+print("2) PayPal")
+print("3) UPI")
+
+user_choice = int(input("Enter your option: "))
+total_bill = int(input("Enter bill amount: "))
+
+if user_choice == 1:
+    manager = CheckoutManager(CardTransaction())
+elif user_choice == 2:
+    manager = CheckoutManager(PaypalTransaction())
+elif user_choice == 3:
+    manager = CheckoutManager(UpiTransaction())
+else:
+    print("Invalid selection.")
+    exit()
+
+manager.execute_payment(total_bill)
+
+
+# Output:
+# Choose a Payment Option:
+# 1) Credit/Debit Card
+# 2) PayPal
+# 3) UPI
+# Enter your option: 3
+# Enter bill amount: 3000
+# Successfully transferred ₹500 via UPI network
