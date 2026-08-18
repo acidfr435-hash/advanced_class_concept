@@ -38,11 +38,11 @@ else:
 manager.execute_payment(total_bill)
 
 
-# Output:
-# Choose a Payment Option:
-# 1) Credit/Debit Card
-# 2) PayPal
-# 3) UPI
-# Enter your option: 3
-# Enter bill amount: 3000
-# Successfully transferred ₹500 via UPI network
+ Output:
+ Choose a Payment Option:
+ 1) Credit/Debit Card
+ 2) PayPal
+ 3) UPI
+ Enter your option: 3
+ Enter bill amount: 3000
+ Successfully transferred ₹500 via UPI network
