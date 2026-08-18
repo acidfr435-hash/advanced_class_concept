@@ -1,0 +1,74 @@
+from abc import ABC, abstractmethod
+
+class PaymentStrategy(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+
+class CreditCardStrategy(PaymentStrategy):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Credit Card")
+
+
+class DebitCardStrategy(PaymentStrategy):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Debit Card")
+
+
+class NetBankingStrategy(PaymentStrategy):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Net Banking")
+
+
+class UpiStrategy(PaymentStrategy):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using UPI")
+
+
+class PaymentProcessor:
+    def __init__(self, strategy=None):
+        self._strategy = strategy
+
+    def set_strategy(self, strategy):
+        self._strategy = strategy
+
+    def process_payment(self, amount):
+        if self._strategy:
+            self._strategy.pay(amount)
+        else:
+            print("Transaction Failed: No payment method selected.")
+
+
+print("--- Select Payment Method ---")
+print("1. Credit Card")
+print("2. Debit Card")
+print("3. Net Banking")
+print("4. UPI")
+
+choice = int(input("Enter Choice (1-4): "))
+amount = int(input("Enter Amount: "))
+
+available_methods = {
+    1: CreditCardStrategy(),
+    2: DebitCardStrategy(),
+    3: NetBankingStrategy(),
+    4: UpiStrategy()
+}
+
+if choice in available_methods:
+    processor = PaymentProcessor(available_methods[choice])
+    processor.process_payment(amount)
+else:
+    print("Invalid Choice. Exiting system.")
+
+
+ Output (Assuming user enters 3, then 1500):
+ --- Select Payment Method ---
+ 1. Credit Card
+ 2. Debit Card
+ 3. Net Banking
+ 4. UPI
+ Enter Choice (1-4): 3
+ Enter Amount: 1500
+ Paid ₹1500 using Net Banking
