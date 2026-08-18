@@ -24,6 +24,6 @@ def fib_table(n):
 print("Memoization result:", fib_memo(10))
 print("Tabulation result:", fib_table(10))
 
-# Output:
-# Memoization result: 55
-# Tabulation result: 55
+ Output:
+ Memoization result: 55
+ Tabulation result: 55
