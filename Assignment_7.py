@@ -10,3 +10,8 @@ emails = re.findall(pattern, text)
 print("Extracted email addresses:")
 for email in emails:
     print(email)
+output :
+Extracted email addresses:
+no_contact@gmail.com
+no_email9@gmail.com
+t_need_to_123@yahoo.com
